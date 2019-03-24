@@ -33,7 +33,7 @@
 		
 		@mysqli_query($db,"update info set name='$name', college='$college' where id=$id");
 		$_SESSION['msg']="Updated";
-		header('location: index.php');
+		header('location: display.php');
 	}
 	
 	if(isset($_GET['del']))
@@ -41,7 +41,7 @@
 		$id=$_GET['del'];
 		@mysqli_query($db,"delete from info where id='$id'");
 		$_SESSION['msg']="Deleted";
-		header('location: index.php');
+		header('location: display.php');
 	}
 	
 	$results= @mysqli_query($db,"select * from info");
